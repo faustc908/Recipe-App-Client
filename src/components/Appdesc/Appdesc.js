@@ -16,7 +16,8 @@ class Appdesc extends React.Component {
           Are you tired of the same boring meals day after day? GoodEats helps
           you find new recipes to try out. Simply enter in an ingredient or dish
           and find dozens of results! Impress your friends and family with fresh
-          new ideas!
+          new ideas! If you have a great recipe that you would like to share
+          please add it to the form below!
         </p>
       </div>
     );

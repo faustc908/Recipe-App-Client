@@ -44,3 +44,19 @@
   padding-top: 10px;
   text-align: center;
 }
+
+.inputBox {
+  width: 20%;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid rgba(17, 3, 82, 0.601);
+}
+
+.inputBox2 {
+  width: 20%;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid rgba(17, 3, 82, 0.601);
+}

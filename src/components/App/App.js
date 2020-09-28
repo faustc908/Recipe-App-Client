@@ -9,6 +9,7 @@ import RecipeForm from "../RecipeForm/RecipeForm";
 import InputRecipe from "../InputRecipe/InputRecipe";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
+import EditRecipe from "../EditRecipe/EditRecipe";
 
 library.add(faUtensils);
 
@@ -22,6 +23,7 @@ const App = () => {
   const [recipes1, updateRecipe] = useState([]);
   const [query, setQuery] = useState("banana");
   const [recipe, setRecipe] = useState([]);
+
   const removeRecipe = async (id) => {
     try {
       fetch(`http://localhost:8000/recipe/${id}`, {
@@ -38,6 +40,7 @@ const App = () => {
     alert("load recipes");
     grabRecipe();
   }, []);
+
   useEffect(() => {
     alert("change recipes");
     grabRecipe();
@@ -55,6 +58,7 @@ const App = () => {
       console.error(err.message);
     }
   };
+
   useEffect(() => {
     fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
@@ -86,6 +90,7 @@ const App = () => {
       <div>
         <InputRecipe updateRecipe={updateRecipe} />
         <RecipeForm recipe={recipe} removeRecipe={removeRecipe} />
+        <EditRecipe recipe={recipe} />
       </div>
       <div>
         <Footer />

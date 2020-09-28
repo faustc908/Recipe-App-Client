@@ -20,13 +20,10 @@ const InputRecipe = ({ updateRecipe }) => {
       await fetch("http://localhost:8000/recipe", header).then(async function (
         response
       ) {
-        // alert(response);
         const data = await response.json();
         alert(data.description);
         updateRecipe();
       });
-
-      //window.location = "/";
     } catch (err) {
       console.error(err.message);
     }
@@ -34,14 +31,16 @@ const InputRecipe = ({ updateRecipe }) => {
 
   return (
     <div className="input">
-      <h1>User Recipes</h1>
+      <h1 className="appDesc">User Recipes</h1>
+      <p>Enter your own favorite recipes below!</p>
       <form onSubmit={onSubmitForm}>
         <input
+          className="inputBox"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button type="button" onClick={onSubmitForm}>
+        <button className="inputButton" type="button" onClick={onSubmitForm}>
           Add
         </button>
       </form>

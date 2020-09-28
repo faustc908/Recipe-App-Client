@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import "./EditRecipe.css";
 
 const EditRecipe = ({ recipe }) => {
   const [description, setDescription] = useState(recipe.description);
@@ -18,8 +19,6 @@ const EditRecipe = ({ recipe }) => {
           body: JSON.stringify(body),
         }
       );
-
-      // window.location = "/";
     } catch (err) {
       console.error(err.message);
     }
@@ -27,28 +26,24 @@ const EditRecipe = ({ recipe }) => {
 
   return (
     <Fragment>
-      <button type="button" data-target={`#id${recipe.recipe_id}`}>
-        Edit
-      </button>
-      <div>
+      <div className="inputForm">
         <div>
-          <h4>Edit Recipe</h4>
-          <button
-            type="button"
-            onClick={() => setDescription(recipe.description)}
-          >
-            &times;
-          </button>
+          <h4 className="editDesc">Edit Recipe</h4>
         </div>
         <div>
           <input
+            className="inputBox2"
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
         <div>
-          <button type="button" onClick={(e) => updateDescription(e)}>
+          <button
+            className="inputButton"
+            type="button"
+            onClick={(e) => updateDescription(e)}
+          >
             Edit
           </button>
         </div>
