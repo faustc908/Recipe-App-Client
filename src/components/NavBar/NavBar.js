@@ -12,7 +12,7 @@ class NavBar extends React.Component {
           <FontAwesomeIcon className="icon" icon="utensils" />
           GoodEats
         </p>
-        <p className="textb">Search for new recipes</p>
+        <p className="textb">Find new recipes</p>
       </div>
     );
   }

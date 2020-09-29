@@ -1,18 +1,17 @@
 import React from "react";
 import style from "./recipe.module.css";
 
-// Recipe render from call
+// Recipe render from call to Edamam API
 
-const Recipe = ({ title, calories, image, ingredients, url }) => {
+const Recipe = ({ title, image, ingredients, url }) => {
   return (
     <div className={style.recipe}>
       <h1 className={style.recipeTitle}>{title}</h1>
       <ol>
-        {ingredients.map((ingredient) => (
-          <li>{ingredient.text}</li>
+        {ingredients.map((ingredient, i) => (
+          <li key={i}>{ingredient.text}</li>
         ))}
       </ol>
-      <p>Total calories: {calories}</p>
       <a className={style.recipeLink} href={url}>
         Find cooking instructions!
       </a>

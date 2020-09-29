@@ -41,7 +41,7 @@ const InputRecipe = ({ updateRecipe }) => {
           onChange={(e) => setDescription(e.target.value)}
         />
         <button className="inputButton" type="button" onClick={onSubmitForm}>
-          Add
+          Add recipe
         </button>
       </form>
     </div>

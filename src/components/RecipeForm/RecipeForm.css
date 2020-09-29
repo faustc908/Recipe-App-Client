@@ -5,7 +5,7 @@
 .inputButton {
   background: rgb(45, 48, 245);
   border: none;
-  padding: 10px 10px;
+  margin-top: 10px;
   color: white;
   border: 2px solid rgba(17, 3, 82, 0.601);
   border-radius: 10px;

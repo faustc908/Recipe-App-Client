@@ -4,7 +4,7 @@ import "./EditRecipe.css";
 const EditRecipe = ({ recipe }) => {
   const [description, setDescription] = useState(recipe.description);
 
-  // Edit recipe
+  // Edit recipe method
 
   const updateDescription = async (e) => {
     e.preventDefault();
@@ -28,7 +28,9 @@ const EditRecipe = ({ recipe }) => {
     <Fragment>
       <div className="inputForm">
         <div>
-          <h4 className="editDesc">Edit Recipe</h4>
+          <h4 className="editDesc">
+            If you want to edit the recipe add the entire new recipe below
+          </h4>
         </div>
         <div>
           <input
@@ -44,7 +46,7 @@ const EditRecipe = ({ recipe }) => {
             type="button"
             onClick={(e) => updateDescription(e)}
           >
-            Edit
+            Edit recipe
           </button>
         </div>
       </div>

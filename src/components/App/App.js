@@ -9,7 +9,7 @@ import RecipeForm from "../RecipeForm/RecipeForm";
 import InputRecipe from "../InputRecipe/InputRecipe";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import EditRecipe from "../EditRecipe/EditRecipe";
+require("dotenv").config();
 
 library.add(faUtensils);
 
@@ -19,10 +19,14 @@ const App = () => {
   const APP_ID = "7e817b93";
   const APP_KEY = "dd1f3f5c93f40c501dd29392c73cbd2d";
 
+  //  States
+
   const [recipes, setRecipes] = useState([]);
   const [recipes1, updateRecipe] = useState([]);
   const [query, setQuery] = useState("banana");
   const [recipe, setRecipe] = useState([]);
+
+  //  Delete recipe from database
 
   const removeRecipe = async (id) => {
     try {
@@ -36,6 +40,8 @@ const App = () => {
     }
   };
 
+  //  Change states
+
   useEffect(() => {
     alert("load recipes");
     grabRecipe();
@@ -46,7 +52,8 @@ const App = () => {
     grabRecipe();
   }, [recipes1]);
 
-  //API Call
+  // Fetches recipe from database and appends to DOM
+
   const grabRecipe = async () => {
     alert("grabRecipe");
     try {
@@ -58,6 +65,8 @@ const App = () => {
       console.error(err.message);
     }
   };
+
+  // API call for recipe search
 
   useEffect(() => {
     fetch(
@@ -73,7 +82,7 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Appdesc />
-      <p className="formHead">Please enter an ingredient:</p>
+      <p className="formHead">Please enter an ingredient</p>
       <AppForm onSearch={setQuery} />
       <div className="recipes">
         {recipes.map((recipe) => (
@@ -90,7 +99,6 @@ const App = () => {
       <div>
         <InputRecipe updateRecipe={updateRecipe} />
         <RecipeForm recipe={recipe} removeRecipe={removeRecipe} />
-        <EditRecipe recipe={recipe} />
       </div>
       <div>
         <Footer />

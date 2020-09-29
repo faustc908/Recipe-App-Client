@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-// Footer with link to API source
+// Footer with link to Edamam API
 
 class Footer extends React.Component {
   render() {

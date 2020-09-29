@@ -1,30 +1,30 @@
 import React, { Fragment } from "react";
 import "./RecipeForm.css";
+import EditRecipe from "../EditRecipe/EditRecipe";
+
+// Render for user added recipes
 
 const ShowRecipe = ({ recipe, removeRecipe }) => {
-  //delete recipe function
-
-  console.log(recipe);
-
   return (
     <Fragment>
       <div className="form">
         <div>
-          {recipe.map((recipe) => (
-            <p key={recipe.recipe_id}>
-              <p>{recipe.description}</p>
-              <div>
-                <button
-                  className="inputButton"
-                  type="submit"
-                  onClick={() => removeRecipe(recipe.recipe_id)}
-                >
-                  Delete
-                </button>
-              </div>
-            </p>
-          ))}
+          <button
+            className="inputButton"
+            type="submit"
+            onClick={() => removeRecipe(recipe.recipe_id)}
+          >
+            Delete recipe
+          </button>
         </div>
+        {recipe.map((recipe) => (
+          <div key={recipe.recipe_id}>
+            <p>{recipe.description}</p>
+            <div>
+              <EditRecipe recipe={recipe} />
+            </div>
+          </div>
+        ))}
       </div>
     </Fragment>
   );
